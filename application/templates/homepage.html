@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>Reverse PDF Page Order</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+        
+        
+        <style type="text/css">
+            html,body {
+			  height:100%;
+			}
+
+			h1 {
+			  font-family: Arial,sans-serif
+			  font-size:80px;
+			  color:#DDCCEE;
+			}
+
+			.lead {
+				color:#DDCCEE;
+			}
+
+
+			/* Custom container */
+			.container-full {
+			  margin: 0 auto;
+			  width: 100%;
+			  min-height:100%;
+			  background-color:#110022;
+			  color:#eee;
+			  overflow:hidden;
+			}
+
+			.container-full a {
+			  color:#efefef;
+			  text-decoration:none;
+			}
+
+			.v-center {
+			  margin-top:7%;
+			}
+		
+		.btn-file {
+		    position: relative;
+		    overflow: hidden;
+		}
+		.btn-file input[type=file] {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    min-width: 100%;
+		    min-height: 100%;
+		    font-size: 999px;
+		    text-align: right;
+		    filter: alpha(opacity=0);
+		    opacity: 0;
+		    background: red;
+		    cursor: inherit;
+		    display: block;
+		}
+		input[readonly] {
+			background-color: white !important;
+			cursor: text !important;
+		}
+	</style>
+	
+
+	
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  >
+        
+        <div class="container-full">
+
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1>Reverse PDF Page Order</h1>
+          <p class="lead">Upload your PDF to have its page order reversed.</p>
+          
+          <br><br>
+		</div>
+		<form action="" method=post enctype=multipart/form-data>
+			<div class="row">
+			<div class="col-lg-4 col-md-offset-4 col-sm-6">
+				 
+					<div class="input-group">
+						<span class="input-group-btn">
+							<span class="btn btn-primary btn-file">
+								Browse&hellip; <input type="file" name="file" />
+							</span>
+						</span>
+						<input type="text" class="form-control" readonly>
+
+					</div>
+					
+					
+			</div>
+			</div>
+			<br>
+			<div class="row">
+			<div class="col-lg-2 col-md-offset-5">
+				<input class="btn btn-primary btn-file" style="width: 100%;" type="submit" value="Upload">
+			</div>
+			</div>
+		</form>
+        
+      </div> <!-- /row -->
+  
+  	  <div class="row">
+       
+        <div class="col-lg-12 text-center v-center" style="font-size:39pt;">
+          <a href="#"><i class="icon-github"></i></a>
+        </div>
+      
+      </div>
+  
+  	<br><br><br><br><br>
+
+</div> <!-- /container full -->
+
+<div class="container">
+  
+  	<hr>
+  
+  	<div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>No Limits</h3></div>
+            <div class="panel-body">Your file upload sizes are not limited. So, this application is completely ripe for abuse! Go ahead and upload that 100mb PDF.
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-4">
+        	<div class="panel panel-default">
+            <div class="panel-heading"><h3>No Purchase Required</h3></div>
+            <div class="panel-body">The best things in life are free. This now includes reversing the page order of PDFs.
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-4">
+        	<div class="panel panel-default">
+            <div class="panel-heading"><h3>No Sign-Up</h3></div>
+            <div class="panel-body">I don't want your information, I just want to reverse the page order of your PDFs! If you don't believe me, get the code from the Github link above and host it yourself.
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+        
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+        <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script>
+		$(document)
+			.on('change', '.btn-file :file', function() {
+				var input = $(this),
+				numFiles = input.get(0).files ? input.get(0).files.length : 1,
+				label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+				input.trigger('fileselect', [numFiles, label]);
+		});
+		
+		$(document).ready( function() {
+			$('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+				
+				var input = $(this).parents('.input-group').find(':text'),
+					log = numFiles > 1 ? numFiles + ' files selected' : label;
+				
+				if( input.length ) {
+					input.val(log);
+				} else {
+					if( log ) alert(log);
+				}
+				
+			});
+		});		
+	</script>
+    </body>
+</html>

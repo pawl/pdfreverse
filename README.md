@@ -1,7 +1,7 @@
 pdfreverse
 ==========
 
-Reverses the page order of PDFs using flask + google app engine.
+Reverses the page order of PDFs using flask, pyPDF, and google app engine.
 
 Sources:
 * File upload styling: http://labs.abeautifulsite.net/demos/bootstrap-file-inputs/
